@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chainfusion | Test task</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 align-self-center">
+          <div class="form-swap">
+            <img src="assets/img/logo.svg" class="img-fluid logo mx-auto d-block">
+            <form>
+              <div class="form-group custom-input">
+                <input type="text" class="form-control" id="from-amount" value="0.00252149">
+                <span class="token-amount">$4.00</span>
+                <div class="select-token" data-toggle="modal" data-target="#selectToken" id="token-from"><img src="assets/img/ethereum.svg"> ETH <i class="fa-light fa-chevron-down"></i></div>
+              </div>
+              <div class="change-token" onclick="tokenSwap()"><i class="fa-regular fa-arrow-up-arrow-down"></i></div>
+              <div class="form-group custom-input">
+                <input type="text" class="form-control" id="to-amount" value="4.00">
+                <span class="token-amount">$4.00</span>
+                <div class="select-token" data-toggle="modal" data-target="#selectToken" id="token-to"><img src="assets/img/dai.svg"> DAI <i class="fa-light fa-chevron-down"></i></div>
+              </div>
+              <small id="total-amount"><strong>1</strong> DAI = <strong>0.0006314</strong> ETH ($1.0000)</small>
+              <input type="submit" value="Send">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div class="modal fade" id="selectToken">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <div class="modal-header">
+          <h5 class="modal-title">Select a token</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <div class="modal-body">
+          <form>
+            <div class="form-group search-form">
+              <span class="fa-light fa-magnifying-glass form-control-search"></span>
+              <input type="text" class="form-control" id="from-amount" placeholder="Search..">
+            </div>
+          </form>
+
+          <div class="scroll-token-list">
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/ethereum.svg" alt="">
+                <div class="media-body">
+                  <h6>Ether</h6>
+                  <p>ETH</p>
+                </div>
+              </div>
+            </div>
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/dai.svg" alt="">
+                <div class="media-body">
+                  <h6>Dai Stablecoin</h6>
+                  <p>DAI</p>
+                </div>
+              </div>
+            </div>
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/ethereum.svg" alt="">
+                <div class="media-body">
+                  <h6>Ether</h6>
+                  <p>ETH</p>
+                </div>
+              </div>
+            </div>
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/dai.svg" alt="">
+                <div class="media-body">
+                  <h6>Dai Stablecoin</h6>
+                  <p>DAI</p>
+                </div>
+              </div>
+            </div>
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/ethereum.svg" alt="">
+                <div class="media-body">
+                  <h6>Ether</h6>
+                  <p>ETH</p>
+                </div>
+              </div>
+            </div>
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/dai.svg" alt="">
+                <div class="media-body">
+                  <h6>Dai Stablecoin</h6>
+                  <p>DAI</p>
+                </div>
+              </div>
+            </div>
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/ethereum.svg" alt="">
+                <div class="media-body">
+                  <h6>Ether</h6>
+                  <p>ETH</p>
+                </div>
+              </div>
+            </div>
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/dai.svg" alt="">
+                <div class="media-body">
+                  <h6>Dai Stablecoin</h6>
+                  <p>DAI</p>
+                </div>
+              </div>
+            </div>
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/ethereum.svg" alt="">
+                <div class="media-body">
+                  <h6>Ether</h6>
+                  <p>ETH</p>
+                </div>
+              </div>
+            </div>
+            <div class="token" data-dismiss="modal">
+              <div class="media">
+                <img class="mr-2" src="assets/img/dai.svg" alt="">
+                <div class="media-body">
+                  <h6>Dai Stablecoin</h6>
+                  <p>DAI</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+function tokenSwap() {
+    swapElements(document.getElementById("token-from"), document.getElementById("token-to"));
+}
+
+function swapElements(token1, token2) {
+    var temp = document.createElement("div");
+    token1.parentNode.insertBefore(temp, token1);
+    token2.parentNode.insertBefore(token1, token2);
+    temp.parentNode.insertBefore(token2, temp);
+    temp.parentNode.removeChild(temp);
+}
+
+    </script>
+
+
+  </body>
+</html>
